@@ -5,6 +5,15 @@
 {% block body %}
     <div class="container mt-4">
         <h1>Tous nos biens</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aut dignissimos iste iure quia unde. Iste qui quo ratione sit sunt. Blanditiis dignissimos enim error iure nobis obcaecati perspiciatis, tempora.</p>
+        <div class="row">
+            {% for property in properties %}
+                <div class="col-md-4">
+                    {% include 'property/_property.html.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            {{ knp_pagination_render(properties) }}
+        </div>
     </div>
 {% endblock %}
